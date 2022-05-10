@@ -21,7 +21,8 @@
 
 .btn-area {
     margin-top: 40px;
-    height: 200px;
+    /* height: 200px; */
+    height: auto;
     width: 400px;
     border: 2px solid white;
     display: block;
@@ -30,16 +31,46 @@
     border-radius: 5px;
 }
 
+#btn-counter:hover, #btn-subtract:hover {
+    transform: translateY(-5px);
+    border:none;
+    background-color: chocolate;
+}
+
 .close {
     border: 1px solid white;
-    margin-left:350px;
-    border-radius: 0 5px 0 5px;
+    margin-left:370px;
+    border-top: none;
+    border-right: none;
+    /* border-radius: 0 5px 0 5px; */
+    cursor: pointer;
+}
+
+.close:hover, .close-2:hover {
+    background-color: chocolate;
+}
+
+.close-2 {
+    border: 1px solid white;
+    border-top: none;
+    border-right: none;
+    /* border-radius: 50%; */
+    cursor: pointer;
+    margin-left: 260px;
 }
 
 .showcase {
     background: url(../img/scenic-view-of-the-beach-723241.jpg) no-repeat center center fixed;
     background-size: cover;
-    height: 400px;
+    height: 450px;
+}
+
+.counter-display {
+    margin: 0 56px 0 56px;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding-bottom: 12px;
+    display: none;
 }
 
 .heading {
@@ -52,11 +83,19 @@ p {
 }
 
 .newsletter  {
-    background: chocolate;
-    text-align: center;
+    /* max-width: 100%; */
+    /* background: chocolate; */
+    /* text-align: center; */
     height: auto;
-    width: auto;
+    /* width: auto; */
     /* padding: 30px auto 30px auto ; */
+}
+
+.newsletter-wrapper {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .newsletter-form input{
@@ -113,6 +152,12 @@ p {
 
 /* Phone media queries */
 @media(max-width: 500px) {
-    
-    
+    .btn-area {
+        margin-bottom: 40px !important;
+    }
+    .showcase-content  h1 {
+        padding: 0;
+        font-size: 1.5rem;
+        color: black;
+    }
 }
