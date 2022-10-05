@@ -1,23 +1,39 @@
-const counterDispalyArea = document.querySelector('.btn-area');
+const counterDisplayArea = document.querySelector('.btn-area');
 const counterDisplay = document.querySelector('.counter-display');
 const counterDisplayContent = document.querySelector('.counter-display-content');
-const closeButton = document.querySelector('.close');
-const closeButton2 = document.querySelector('.close-2');
+const footer = document.querySelector('.footer');
+const launchCounter = document.querySelector('.launch-counter');
+
+launchCounter.addEventListener('click', e => {
+    counterDisplayArea.classList.remove('d-none');
+    e.target.parentElement.classList.add('d-none');
+})
 
 let count = 0;
-counterDispalyArea.addEventListener('click', e => {
+counterDisplayArea.addEventListener('click', e => {
     if (e.target.className === 'close') {        
-        e.target.parentElement.remove();
+        e.target.parentElement.classList.add('d-none');
+        launchCounter.parentElement.classList.remove('d-none');
     }
     if (e.target.id === 'btn-counter') {
-        count++;          
+        count++;     
+        counterDisplay.style.display = 'block';     
     }    
     if (e.target.id === 'btn-subtract') {
         count--;
+        counterDisplay.style.display = 'block';
     }
-    counterDisplay.style.display = 'block';
+    if (e.target.id === 'close-2') {
+        counterDisplay.style.display = 'none';
+    }
+    
     counterDisplayContent.innerHTML = `
-        <h2 class="pt-1">Counter Display : <span style="color: chocolate; padding-bottom: 12px;">${count}</span></h2>
+        <h4 class="pt-1">Counter Display: <span style="color: chocolate; padding-bottom: 12px; display: inline;">${count}</span></h2>
     `;
 });
+
+
+const now = new Date();
+const year = now.getFullYear();
+footer.innerHTML = `<p class="text-center pt-2 footer-text">Windfall Webdesign copyright &copy; ${year}</p>`
 
