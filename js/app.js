@@ -23,6 +23,10 @@ counterDisplayArea.addEventListener('click', e => {
         count--;
         counterDisplay.style.display = 'block';
     }
+    if (e.target.id === 'btn-reset') {
+        count = 0;
+        counterDisplay.style.display = 'block';
+    }
     if (e.target.id === 'close-2') {
         counterDisplay.style.display = 'none';
     }
@@ -32,8 +36,6 @@ counterDisplayArea.addEventListener('click', e => {
     `;
 });
 
-
-const now = new Date();
-const year = now.getFullYear();
+const year = new Date().getFullYear();
 footer.innerHTML = `<p class="text-center pt-2 footer-text">Windfall Webdesign copyright &copy; ${year}</p>`
 
